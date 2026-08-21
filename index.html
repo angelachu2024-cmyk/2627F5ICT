@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A client-side Python judge for classroom exercises.">
+  <title>CodeBench | Python Judge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="dashboard-view" class="dashboard-view" aria-labelledby="dashboard-title">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Student Practice Hub"><span>🐍</span> Form 5 ICT T1</a>
+        <div class="student-controls">
+          <!-- <span class="student-label">Student Mode</span> -->
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">Student Python Homework Checker</p>
+            <h1 id="dashboard-title">Check Your Homework</h1>
+          </div>
+          <div id="pyodide-status" class="engine-status" data-state="loading"><span class="status-dot"></span> Warming up Python</div>
+        </div>
+
+        <div class="workspace-grid">
+          <aside class="problem-sidebar">
+            <label for="problem-select">Challenge</label>
+            <select id="problem-select"></select>
+            <div id="problem-meta" class="problem-meta"></div>
+            <div class="sidebar-note">
+              <span aria-hidden="true">&uarr;</span>
+              <p>Select one homework, check each question, then upload the whole file for final validation.</p>
+            </div>
+          </aside>
+
+          <div class="workspace-main">
+            <article class="problem-panel">
+              <p class="panel-kicker">Current challenge</p>
+              <h2 id="problem-title"></h2>
+              <p id="problem-description"></p>
+              <div id="problem-reference" class="panel-kicker"></div>
+              <div id="requirements" class="requirements"></div>
+            </article>
+
+            <section id="homework-panel" class="homework-panel" hidden>
+              <h3 id="homework-title">Homework Instructions</h3>
+              <div class="instruction-grid">
+                <article class="instruction-card">
+                  <h4>Submission Files</h4>
+                  <p>Code: <strong id="code-name-example">F5A01_YourName_HW01.py</strong></p>
+                  <p>Screenshot: <strong id="screenshot-name-example">F5A01_YourName_HW01.png</strong></p>
+                  <p class="note">Class letter A-D and student number 01-40 are required.</p>
+                  <p class="note">Screenshot must include code and running result.</p>
+                </article>
+                <article class="instruction-card">
+                  <h4>Required Comments</h4>
+                  <p><strong id="top-comment-example"># F5A01 YourName</strong> at the top of homework.</p>
+                  <p><strong id="question-comment-example"># HW1 Qn</strong> before all questions, replace n with the question number.</p>
+                </article>
+                <article class="instruction-card">
+                  <h4>Marking Scheme (100%)</h4>
+                  <ul id="marking-list" class="marking-list"></ul>
+                </article>
+              </div>
+
+              <div id="question-checks" class="question-checks"></div>
+
+              <section class="whole-file-check" aria-labelledby="whole-file-title">
+                <h4 id="whole-file-title">Check Whole File</h4>
+                <p id="whole-file-description">Upload the complete homework file to validate all required questions in one run.</p>
+                <button id="check-file-button" class="primary-button" type="button">Check Whole File</button>
+                <input id="file-input" type="file" accept=".py,text/x-python" hidden>
+                <p id="file-name" class="file-name"></p>
+                <section id="whole-file-result" class="inline-result" aria-live="polite">
+                  <div class="results-placeholder"><span aria-hidden="true">&middot;&middot;&middot;</span><p>Whole-file result will appear here.</p></div>
+                </section>
+              </section>
+            </section>
+
+            <section id="results-panel" class="results-panel" aria-live="polite">
+              <div class="results-placeholder"><span aria-hidden="true">&middot;&middot;&middot;</span><p>Your verdict and execution logs will appear here.</p></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="problems.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
