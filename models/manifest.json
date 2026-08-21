@@ -1,5 +1,7 @@
 [
   {"file": "fruits_banana.glb"},
   {"file": "fruits_apple.glb"},
-  {"file": "containers_can.glb"}
+  {"file": "fruits_grape.glb"},
+  {"file": "fruits_orange.glb"},
+  {"file": "containers_containers_water bottle.glb"}
 ]
