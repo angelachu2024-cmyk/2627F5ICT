@@ -415,7 +415,7 @@ textarea:focus {
   transform: translateY(-1px);
 }
 
-.whole-file-check {
+. {
   margin-top: 14px;
   padding: 16px;
   border: 1px solid var(--line);
@@ -428,6 +428,7 @@ textarea:focus {
   color: var(--ink);
   font-size: 21px;
   font-weight: 700;
+  visibility: hidden;
 }
 
 .whole-file-check p {
